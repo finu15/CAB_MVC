@@ -1,0 +1,71 @@
+<link href="static/css/confirm.css" rel="stylesheet" type="text/css" />
+
+<center><a href="/booking">Back to Booking page</a></center>
+
+<center>
+
+    <video width="900" height="350" loop control autoplay muted>
+
+        <source src="static/image/confirm.mp4" type="video/mp4">
+        <source src="static/image/confirm.mp4" type="video/ogg">
+
+    </video>
+
+    <h2>Submitted Details:</h2>
+
+    <input type="button" name="btnShow" value="Show Data" onclick="showData();" />
+
+    Welcome <label id="lblpickup"></label>
+    <span id="pickup"></span> ! Your address is <span id="destination"></span>
+    </br>
+
+    <div class="container">
+        {{!-- <a href="/booking" class="btn btn-primary">New Booking</a> --}}
+        <table class="table table-striped mt-4">
+            <tr>
+                <th>Id</th>
+                <th>PickUp</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+            {{#each data}}
+            <tr>
+                <td>{{this.dataValues.booking_id}}</td>
+                <td>{{this.dataValues.pickup}}</td>
+                <td>{{this.dataValues.destination}}</td>
+                <td>{{this.dataValues.date}}</td>
+                <td>{{this.dataValues.time}}</td>
+                {{!-- <td>
+                    <a href="/update/{{this.dataValues.id}}">Edit</a> |
+                    <a href="/delete/{{this.dataValues.id}}" class="text-danger"
+                        onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+                </td> --}}
+            </tr>
+            {{/each}}
+        </table>
+        {{!-- <p class="text-end">You are logged in as:
+            <b>{{identity.firstName}} {{identity.lastName}}</b>
+        </p> --}}
+    </div>
+
+    </br>
+    <a href='/payment'>
+        <button class="pay">
+            MAKE PAYMENT💸
+        </button>
+    </a>
+
+</center>
+<script>
+    function showData() {
+        var data = JSON.parse(localStorage.getItem('formData'))
+        console.log(data.firstName);
+        var pickup = data.pickup;
+        var destination = data.destination;
+        console.log(pickup);
+        document.getElementById('pickup').innerHTML = data.pickup;
+        document.getElementById('destination').innerHTML = data.destination;
+    }
+</script>

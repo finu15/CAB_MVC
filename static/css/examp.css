@@ -1,0 +1,21 @@
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.div-border {
+  border: none;
+  color: yellow;
+  background-color: orange;
+  font-size: 30px;
+}
