@@ -8,14 +8,6 @@ const Bookings =db.sequelize.define('Bookings', {
         autoIncrement: true
     },
 
-    // passenger_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model:"passengers",
-    //         key:"passenger_id"
-    //     }
-    // },
-
     pickup: {
         type: DataTypes.STRING(15),
         allowNull: false
@@ -34,7 +26,13 @@ const Bookings =db.sequelize.define('Bookings', {
     time: {
         type: DataTypes.TIME,
         allowNull: false
+    },
+
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
+
 });
 
 module.exports = Bookings;

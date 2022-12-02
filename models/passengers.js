@@ -8,6 +8,11 @@ const Passengers =db.sequelize.define('Passengers', {
         autoIncrement: true
     },
 
+    role: {
+        type: DataTypes.STRING(10),
+        allowNull: false
+    },
+
     title: {
         type: DataTypes.STRING(10),
         allowNull: false

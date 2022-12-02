@@ -5,9 +5,8 @@ const router = express.Router();
 
 router.get('/login', cc.login);
 router.post('/login', cc.loginPost);
-router.get('/username', cc.create);
+router.get('/username', cc.username);
 router.post('/username', cc.createPost);
-
-//router.post('/home', cc.home);
+router.get('/logout', cc.logout);
 
 module.exports = router;

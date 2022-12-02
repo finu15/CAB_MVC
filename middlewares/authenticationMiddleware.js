@@ -6,27 +6,25 @@ module.exports = async (req, res, next) => {
         user: null
     }
 
-    if(req.url == "/login" || req.url == "/username"){
+    if(req.url == "/login" || req.url == "/registration" || req.url == "/username" ){
         return next();
     }
 
-    let userId = req.session.userId;
+    let userId = req.session.id;
     if(!userId || userId == null){
-        return res.redirect("/");
+        return res.redirect("/login");
     }
 
     let userFromDb = await user.findByPk(userId);
     if(userFromDb == null){
-        return res.redirect("/");
+        return res.redirect("/registration");
     }
 
     req.identity.isAuthenticated = true;
     req.identity.user = {
-        id: userFromDb.dataValues.id,
-        firstName: userFromDb.dataValues.firstName,
-        lastName: userFromDb.dataValues.lastName,
-        email: userFromDb.dataValues.email,
-        role: 'user'
+        user_id: userFromDb.dataValues.user_id,
+        username: userFromDb.dataValues.username,
+        password: userFromDb.dataValues.password
     }
     next();
 }

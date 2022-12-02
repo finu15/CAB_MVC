@@ -17,7 +17,7 @@
                     <form name="loginform" id="loginform" method="post">
                         <div style="font-size: 20px; color: rgb(73, 239, 197);">
                             <label>Username:</label>
-                            <input type="text" name="Username" class="form-control" placeholder="" minlength="5"
+                            <input type="text" name="username" class="form-control" placeholder="" minlength="5"
                                 maxlength="10" required style="padding:5px 40px; ">
                         </div>
                         </br>
@@ -53,7 +53,7 @@
     </script>
 
     <script>
-        var Username = document.forms['loginform']['Username'];
+        var username = document.forms['loginform']['username'];
         var password = document.forms['loginform']['password'];
         var cpassword = document.forms['loginform']['cpassword'];
         var btn = document.getElementById('btn-login');
@@ -65,7 +65,7 @@
         document.querySelectorAll('#loginform input').forEach(e => {
             e.addEventListener('keyup', function (event) {
                 var isValid = true;
-                if (!Username.validity.valid || !password.validity.valid) {
+                if (!username.validity.valid || !password.validity.valid) {
                     isValid = false;
                 }
 

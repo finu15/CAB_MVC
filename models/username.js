@@ -8,14 +8,6 @@ const Username =db.sequelize.define('Username', {
         autoIncrement: true
     },
 
-    // passenger_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model:"passengers",
-    //         key:"passenger_id"
-    //     }
-    // },
-
     username: {
         type: DataTypes.STRING(15),
         allowNull: false,
@@ -33,6 +25,11 @@ const Username =db.sequelize.define('Username', {
         allowNull: false,
         unique: true
     }
+
+    // passenger_id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false
+    // }
 });
 
 module.exports = Username;

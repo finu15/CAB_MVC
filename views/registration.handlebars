@@ -1,6 +1,6 @@
-{{!-- {{>navbar}} --}}
-<div style="background-color: rgb(142, 93, 1) ;">
-    <center><a href="/home">Back to home page</a></center>
+<link href="static/css/reg.css" rel="stylesheet" type="text/css" />
+
+<div class="container" style="padding-top: 25px;">
 
     <center>
 
@@ -11,11 +11,26 @@
 
         </video>
 
-        <form  method="post">
+        <form method="post">
 
 
-            <table cellspacing="2" cellpadding="3"
-                style="color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            <table cellspacing="2" cellpadding="3" width="650px"
+                style="color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:19px;">
+
+                <tr>
+                    <td>
+                        <label for="role"
+                            style=" font-size: 20px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Role</label>
+                    </td>
+
+                    <td>
+                        <select id="role" name="role">
+                            <option selected disabled>Choose here</option>
+                            <option value="driver">Driver</option>
+                            <option value="user">User</option>
+                        </select>
+                    </td>
+                </tr>
 
                 <tr>
                     <td>
@@ -33,29 +48,27 @@
 
                 <tr>
                     <td>
-                        <label for="firstName">First Name:</label>
+                        <label for="firstName">First Name</label>
                     </td>
 
                     <td>
-                        <input type="text" id="firstName" placeholder="Enter First Name of the Passenger"
-                            name="firstName" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="lastName">Last Name:</label>
-                    </td>
-
-                    <td>
-                        <input type="text" id="lastName" placeholder="Enter Last Name of the Passenger"
-                            name="lastName" />
+                        <input type="text" id="firstName" placeholder="Enter First Name" name="firstName" />
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <label for="gender">Gender:</label>
+                        <label for="lastName">Last Name</label>
+                    </td>
+
+                    <td>
+                        <input type="text" id="lastName" placeholder="Enter Last Name" name="lastName" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="gender">Gender</label>
                     </td>
                     <td>
                         <input type="radio" id="male" name="gender" value="Male" />Male
@@ -65,39 +78,39 @@
 
                 <tr>
                     <td>
-                        <label for="dob">Date of Birth:</label>
+                        <label for="dob">Date of Birth</label>
                     </td>
 
                     <td>
-                        <input type="date" id="dob" placeholder="Enter Date of Birth" name="dob" />
+                        <input type="date" id="dob" name="dob" />
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <label for="phoneNumber">Phone Number:</label>
+                        <label for="phoneNumber">Phone Number</label>
                     </td>
 
                     <td>
-                        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter Your Phone Number"
+                        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number"
                             maxlength="10" required />
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <label for="email">Email:</label>
+                        <label for="email">Email</label>
                     </td>
 
                     <td>
-                        <input type="email" id="email" placeholder="Enter your email Address" name="email" />
+                        <input type="email" id="email" placeholder="Enter email address" name="email" />
                     </td>
                 </tr>
 
 
                 <tr>
                     <td>
-                        <label for="address">Address:</label>
+                        <label for="address">Address</label>
                     </td>
 
                     <td>
@@ -110,12 +123,12 @@
 
                 <tr>
                     <td>
-                        <label for="communication">Communication Preference:</label>
+                        <label for="communication">Communication Preference</label>
                     </td>
 
                     <td>
                         <input type="radio" id="email" name="communication" value="1" />Email
-                        <input type="radio" id="sms" name="communication" value="2">SMS
+                        <input type="radio" id="sms" name="communication" value="2" />SMS
                     </td>
                 </tr>
 
