@@ -50,7 +50,7 @@ module.exports.loginPost = async (req, res, next) => {
     });
     console.log(userFromDb)
     if (userFromDb == null) {
-        return res.render('registration', { message: 'Not Registered' })
+        return res.redirect('/registration')
     }
 
     req.session.userId = userFromDb.passenger_id;
