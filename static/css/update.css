@@ -1,0 +1,23 @@
+body{
+    margin-top: 60px;
+    padding: 0;
+    background-color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: orange;
+
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.write{
+    position: fixed;
+    top: 40%;
+    left: 70%;
+    margin-top: -100px;
+    margin-left: -200px;
+}

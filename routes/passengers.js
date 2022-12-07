@@ -15,6 +15,7 @@ router.post('/registration', cc.registerPost);
 router.post('/login', cc.loginPost);
 router.get('/logout', cc.logout);
 router.get('/driverhome', cc.getDriverHome);
+router.get('/adminhome', cc.getAdminHome);
 router.post('/driverhome', cc.loginPost);
 
 module.exports = router;

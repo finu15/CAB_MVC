@@ -3,6 +3,7 @@ const parser = require ('body-parser');
 const passengersRoute = require('./routes/passengers');
 const bookingRoute = require('./routes/booking');
 const driverRoute = require('./routes/driver');
+const adminRoute = require('./routes/admin');
 const path = require('path');
 const cookieSession = require('cookie-session');
 const {engine} = require('express-handlebars');
@@ -25,5 +26,6 @@ app.use(authMiddleware);
 app.use(passengersRoute);
 app.use(bookingRoute);
 app.use(driverRoute);
+app.use(adminRoute);
 
 app.listen(80);

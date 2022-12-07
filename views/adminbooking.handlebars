@@ -1,0 +1,55 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
+<link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/>
+<style>
+    body {
+        margin-top: 20px;
+        background-color: white;
+    }
+    .dataTables_filter{
+        margin-left: 28em !important;
+    }
+    #example_paginate{
+        margin-left: 33em !important;
+}
+</style>
+<center>
+<h2 style="color: rgb(187, 9, 9);">ALL BOOKINGS🔎:</h2>
+
+</center>
+
+<div class="container">
+    <table class="table table-striped mt-4" id="example" style="text-align: center;">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>PickUp</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each data}}
+        <tr>
+
+            <td>{{this.dataValues.booking_id}}</td>
+            <td>{{this.dataValues.pickup}}</td>
+            <td>{{this.dataValues.destination}}</td>
+            <td>{{this.dataValues.date}}</td>
+            <td>{{this.dataValues.time}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    <p class="text-end">You are logged in as: 
+        <b>{{user.fullName}}</b>
+    </p>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" ></script>
+<script>
+$(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>

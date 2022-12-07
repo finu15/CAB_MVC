@@ -11,49 +11,50 @@
 
         <form action="/final/{{amount_id}}">
 
-            <select name="option" id="option" style="width: 300px; height: 40px; border:none; border-radius:100px; text-align:center">
+            <select name="option" id="option"
+                style="width: 300px; height: 40px; border:none; border-radius:100px; text-align:center">
                 <option selected disabled>Choose here</option>
                 <option value="debit">Debit Card</option>
                 <option value="credit">Credit Card</option>
                 <option value="net">Net Banking</option>
                 <option value="upi">UPI</option>
             </select>
-            </br></br>            
-        <div class="container p-0">
-        <div class="card px-4">
-            <p class="h8 py-3">Payment Details</p>
-            <div class="row gx-3">
-                <div class="col-12">
-                    <div class="d-flex flex-column">
-                        <p class="text mb-1">Person Name</p>
-                        <input class="form-control mb-3" type="text" placeholder="Name">
+            </br></br>
+            <div class="container p-0">
+                <div class="card px-4">
+                    <p class="h8 py-3">Payment Details</p>
+                    <div class="row gx-3">
+                        <div class="col-12">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">Person Name</p>
+                                <input class="form-control mb-3" type="text" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">Card Number</p>
+                                <input class="form-control mb-3" type="text" placeholder="1234 5678 4356">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">Expiry</p>
+                                <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">CVV/CVC</p>
+                                <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="d-flex flex-column">
-                        <p class="text mb-1">Card Number</p>
-                        <input class="form-control mb-3" type="text" placeholder="1234 5678 4356">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="d-flex flex-column">
-                        <p class="text mb-1">Expiry</p>
-                        <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="d-flex flex-column">
-                        <p class="text mb-1">CVV/CVC</p>
-                        <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        </br></br>
-            <input type="submit" value="Pay ₹{{amount}}💳"
-                style="width: 15%; height: 7vh; font-size: 18px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; border-radius: 30px; background-color:white; ">
+                </br></br>
+                <input type="submit" value="Pay ₹{{amount}}💳"
+                    style="width: 15%; height: 7vh; font-size: 18px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; border-radius: 30px; background-color:white; ">
         </form>
-    </div>
-    </center>
+</div>
+</center>
 </div>

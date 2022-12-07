@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="pic">
-        <img src="/static/image/update1.jpg" width="700px">
+        <img src="/static/image/update.jpg" width="700px">
     </div>
     <div class="write">
         <form name="loginform" id="loginform" method="post">
@@ -29,19 +29,11 @@
 
                 <tr>
                     <td>
-                        <label>Date of Journey:</label>
+                        <label>Amount:</label>
                     </td>
                     <td>
-                        <input type="date" name="date" style="width: 400px; height:40px;" required>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-<label>Time of Travel:</label>
-                    </td>
-                    <td>
-<input type="time" name="time" style="width: 400px; height:40px;" required>
+                        <input type="number" name="amount" placeholder="Enter Amount" maxlength="10" required
+                            style="padding:7px 40px; ">
                     </td>
                 </tr>
 
@@ -49,7 +41,7 @@
                     <td>
                         <button type="submit" class="btn btn-primary shadow" id="btn-login"
                             style="width: 300%; height: 7vh; font-size: 25px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;background-color:orange; border:none; ">Update
-                            Booking</button>
+                            Route</button>
                     </td>
 
                 </tr>

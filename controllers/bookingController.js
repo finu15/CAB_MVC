@@ -55,14 +55,14 @@ module.exports.mybookings = (req, res, next) => {
 
 module.exports.delete = async (req, res, next) => {
     let booking_id = req.params.booking_id;
-    let confirmFromDb = await Bookings.findByPk(booking_id);
+    let confirmFromDb = await user.findByPk(booking_id);
     if (confirmFromDb != null) {
-        await Bookings.destroy({
+        await user.destroy({
             where: {
                 booking_id: booking_id
             }
         });
-        res.render("/bookingDetails");
+        res.render("bookingDetails");
     }
 }
 
@@ -87,7 +87,7 @@ module.exports.updatePost = async (req, res, next) => {
             where: { booking_id: req.params.id }
         }
     )
-    res.render('/bookingDetails');
+    res.redirect('/bookingDetails');
 }
 
 module.exports.invoice = (req, res, next) => {

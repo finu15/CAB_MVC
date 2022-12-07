@@ -9,6 +9,10 @@ module.exports.getDriverHome = (req, res, next) => {
     res.render('driverhome');
 }
 
+module.exports.getAdminHome = (req, res, next) => {
+    res.render('adminhome');
+}
+
 
 module.exports.login = (req, res, next) => {
     res.render('login');
@@ -55,10 +59,10 @@ module.exports.loginPost = async (req, res, next) => {
         return res.redirect('/driverhome');
     }
     else if(userFromDb.role=='user') {
-        return res.redirect('login');
+        return res.redirect('/home');
     }
     else{
-
+        return res.redirect('/adminhome');
     }
 }
 
