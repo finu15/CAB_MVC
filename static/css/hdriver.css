@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    background-image: url(/static/image/register.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.write{
+    font-size: 40px;
+    height: 800px;
+    width: 800px;
+    position: fixed;
+    top: 35%;
+    left: 20%;
+    
+}
+
+.but {
+    background-color: red;
+    border-radius: 20px;
+    border: 2px solid red;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 30px;
+    cursor:pointer;
+    text-decoration:none;
+}
+

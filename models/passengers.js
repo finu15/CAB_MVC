@@ -1,4 +1,4 @@
-const {Sequelize, DataTypes} = require ('sequelize')
+const {DataTypes} = require ('sequelize')
 const db = require('./db');
 
 const Passengers =db.sequelize.define('Passengers', {
@@ -18,19 +18,15 @@ const Passengers =db.sequelize.define('Passengers', {
         allowNull: false
     },
 
-    firstName: {
-        type: DataTypes.STRING(15),
+    fullName: {
+        type: DataTypes.STRING(30),
         allowNull: false
     },
 
-    lastName: {
-        type: DataTypes.STRING(15),
-        allowNull: false
-    },
-
-    gender: {
+    username: {
         type: DataTypes.STRING(10),
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
 
     dob: {
@@ -50,8 +46,8 @@ const Passengers =db.sequelize.define('Passengers', {
         unique: true
     },
 
-    address: {
-        type: DataTypes.STRING(80),
+    password: {
+        type: DataTypes.STRING(20),
         allowNull: false
     }
 });

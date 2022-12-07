@@ -5,6 +5,11 @@ module.exports.home = (req, res, next) => {
     res.render('home');
 }
 
+module.exports.getDriverHome = (req, res, next) => {
+    res.render('driverhome');
+}
+
+
 module.exports.login = (req, res, next) => {
     res.render('login');
 }
@@ -17,6 +22,14 @@ module.exports.contact = (req, res, next) => {
     res.render('contact');
 }
 
+module.exports.cabs = (req, res, next) => {
+    res.render('ourcabs');
+}
+
+module.exports.ride = (req, res, next) => {
+    res.render('bookingDetails');
+}
+
 module.exports.booking = (req, res, next) => {
     res.render('booking');
 }
@@ -25,34 +38,58 @@ module.exports.register = (req, res, next) => {
     res.render('registration');
 }
 
-module.exports.getUsername = (req, res, next) => {
-    res.render('username');
+module.exports.loginPost = async (req, res, next) => {
+    const { username, password } = req.body;
+    console.log(username, password)
+    const userFromDb = await user.findOne({
+        where: { username: username, password: password }
+    });
+    console.log(userFromDb)
+    if (userFromDb == null) {
+        return res.render('registration', { message: 'Not Registered' })
+    }
+
+    req.session.userId = userFromDb.passenger_id;
+    console.log(req.session.userId)
+    if (userFromDb.role == 'driver') {
+        return res.redirect('/driverhome');
+    }
+    else if(userFromDb.role=='user') {
+        return res.redirect('login');
+    }
+    else{
+
+    }
 }
 
 module.exports.registerPost = async (req, res, next) => {
-    const {role, title, firstName, lastName, gender, dob, email, phoneNumber, address } = req.body;
     let existingUser = await user.findOne({
         where: {
-            email: email
+            email: req.body.email,
         }
     });
 
     if (existingUser) {
         return res.render('login', { message: 'Already registered.' });
     }
-    
 
     await user.create({
-        role: role,
-        title: title,
-        firstName: firstName,
-        lastName: lastName,
-        gender: gender,
-        dob: dob,
-        email: email,
-        phoneNumber: phoneNumber,
-        address: address
+        role: req.body.role,
+        title: req.body.title,
+        fullName: req.body.fullName,
+        username: req.body.username,
+        dob: req.body.dob,
+        email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
+        password: req.body.password
     });
 
-    res.redirect('username');
+    console.log(req.body);
+
+    res.redirect('/login');
+}
+
+module.exports.logout = (req, res, next) => {
+    req.session = null;
+    res.redirect("/login");
 }

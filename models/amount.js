@@ -1,8 +1,8 @@
 const {Sequelize, DataTypes} = require ('sequelize')
 const db = require('./db');
 
-const Bookings =db.sequelize.define('Bookings', {
-    booking_id: {
+const Amounts =db.sequelize.define('Amounts', {
+    amount_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -18,21 +18,11 @@ const Bookings =db.sequelize.define('Bookings', {
         allowNull: false
     },
 
-    date: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-  
-    time: {
-        type: DataTypes.TIME,
-        allowNull: false
-    },
-
-    passenger_id: {
+    amount: {
         type: DataTypes.INTEGER,
         allowNull: false
     }
 
 });
 
-module.exports = Bookings;
+module.exports = Amounts;

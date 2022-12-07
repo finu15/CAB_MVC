@@ -1,123 +1,59 @@
-<link href="static/css/confirm.css" rel="stylesheet" type="text/css" />
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
+<link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/>
+<style>
+    body {
+        margin-top: 20px;
+        background-color: white;
+    }
+    .dataTables_filter{
+        margin-left: 28em !important;
+    }
+    #example_paginate{
+        margin-left: 33em !important;
+}
+</style>
 <center>
+<h2 style="color: rgb(187, 9, 9);">Cab Search History🔎:</h2>
 
-    <video width="900" height="350" loop control autoplay muted>
+</center>
 
-        <source src="static/image/confirm.mp4" type="video/mp4">
-        <source src="static/image/confirm.mp4" type="video/ogg">
-
-    </video>
-
-    </br></br>
-
-    <table style="width: 900px; height:50px">
+<div class="container">
+    <a href="/booking" class="btn btn-primary">New Booking</a>
+    <table class="table table-striped mt-4" id="example" style="text-align: center;">
+        <thead>
         <tr>
+            <th>Id</th>
+            <th>PickUp</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each data}}
+        <tr>
+
+            <td>{{this.dataValues.booking_id}}</td>
+            <td>{{this.dataValues.pickup}}</td>
+            <td>{{this.dataValues.destination}}</td>
+            <td>{{this.dataValues.date}}</td>
+            <td>{{this.dataValues.time}}</td>
             <td>
-                <input type="checkbox" id="checkbox" />
-            </td>
-            <td>
-                <img src="static/image/cab3s.png" width="120px">
-            </td>
-            <td>
-                <p><b>GoSedan</b></p>
-                <p><i>Affordable rides</i></p>
-            </td>
-            <td>
-                <p>₹198.65</p>
+                <a href="/update/{{this.dataValues.booking_id}}">Edit</a> |
+                <a href="/delete/{{this.dataValues.booking_id}}" class="text-danger"
+                    onclick="return confirm('Are you sure you want to delete this')">Delete</a>
             </td>
         </tr>
-
-        <tr>
-            <td>
-                <input type="checkbox" id="checkbox" />
-            </td>
-            <td>
-                <img src="static/image/cab4a.png" width="120px">
-            </td>
-            <td>
-                <p><b>Auto</b></p>
-                <p><i>Cheap Rides</i></p>
-            </td>
-            <td>
-                <p>₹123.65</p>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <input type="checkbox" id="checkbox" />
-            </td>
-            <td>
-                <img src="static/image/cab1m.png" width="120px">
-            </td>
-            <td>
-                <p><b>Premium</b></p>
-                <p><i>Comfortable, top-quality Ride</i></p>
-            </td>
-            <td>
-                <p>₹233.85</p>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <input type="checkbox" id="checkbox" />
-            </td>
-            <td>
-                <img src="static/image/cab2l.png" width="120px">
-            </td>
-            <td>
-                <p><b>cabXL</b></p>
-                <p><i>Affordable SUV rides</i></p>
-            </td>
-            <td>
-                <p>₹339.95</p>
-            </td>
-        </tr>
+        {{/each}}
+        </tbody>
     </table>
-
-    <a href='/payment'>
-        <button class="pay">
-            MAKE PAYMENT💸
-        </button>
-    </a>
-
-    </br>
-    </br>
-    </br>
-
-    <h2>Search History:</h2>
-
-    </center>
-
-    <div class="container">
-        <a href="/booking" class="btn btn-primary">New Booking</a>
-        <table class="table table-striped mt-4">
-            <tr>
-                <th>Id</th>
-                <th>PickUp</th>
-                <th>Destination</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Action</th>
-            </tr>
-            {{#each data}}
-            <tr>
-                
-                <td>{{this.dataValues.booking_id}}</td>
-                <td>{{this.dataValues.pickup}}</td>
-                <td>{{this.dataValues.destination}}</td>
-                <td>{{this.dataValues.date}}</td>
-                <td>{{this.dataValues.time}}</td>
-                <td>
-                    <a href="/delete/{{this.dataValues.booking_id}}" class="text-danger"
-                        onclick="return confirm('Are you sure you want to delete this')">Delete</a>
-                </td>
-            </tr>
-            {{/each}}
-        </table>
-        <p class="text-end">You are logged in as:
-            <b>{{identity.username}}</b>
-        </p>
-    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" ></script>
+<script>
+$(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>

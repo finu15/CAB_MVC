@@ -1,18 +1,68 @@
-<link href="static/css/final.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/final.css" rel="stylesheet" type="text/css" />
+</br></br>
+<section class="main-pd-wrapper" style="width: 450px; margin: auto">
+    <div style="
+                  text-align: center;
+                  margin: auto;
+                  line-height: 1.5;
+                  font-size: 14px;
+                  color: #4a4a4a;
+                ">
+        <img src="/static/image/logo.png" width="200px">
 
-<center>
-    <video loop control autoplay muted>
-
-        <source src="static/image/last.mp4" type="video/mp4">
-        <source src="static/image/last.mp4" type="video/ogg">
-
-    </video>
-</center>
-
-<div class="final">
-    <center>
-        <p style="color:orange;">
-            On Your Way⏩
+        <p style="font-weight: bold; color: #000; margin-top: 15px; font-size: 18px;">
+            Your Cab Booking Invoice
         </p>
-    </center>
-</div>
+        <hr style="border: 1px dashed rgb(131, 131, 131); margin: 25px auto">
+    </div>
+    <table style="width: 100%; table-layout: fixed">
+
+        <tbody>
+            <tr class="invoice-items">
+
+                <td>Pick Up</td>
+
+                <td style="text-align: right;">{{pickup}}</td>
+            </tr>
+            <tr class="invoice-items">
+
+                <td>Destination</td>
+
+                <td style="text-align: right;">{{destination}}</td>
+            </tr>
+            <tr class="invoice-items">
+
+                <td>Cab Fare</td>
+
+                <td style="text-align: right;">₹{{amount}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <table style="width: 100%;
+              background: #fcbd024f;
+              border-radius: 4px;">
+        <thead>
+            <tr>
+                <th>Total Amount</th>
+
+                <th>&nbsp;</th>
+                <th style="text-align: right;">₹{{amount}}</th>
+
+            </tr>
+        </thead>
+
+    </table>
+
+    <div style="width: 100%;
+              margin-top: 15px;
+              border: 1px dashed #00cd00;
+              border-radius: 3px;">
+        <p style="text-align: center; font-size:25px"><b>Amount paid💸</b></p>
+        <p style="text-align:center; color:orange; font-size:30px"><b>
+                Cab On Your Way⏩
+            </b></p>
+    </div>
+
+</section>

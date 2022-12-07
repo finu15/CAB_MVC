@@ -1,4 +1,4 @@
-const user = require('../models/username');
+const user = require('../models/passengers');
 
 module.exports = async (req, res, next) => {
     req.identity = {
@@ -6,11 +6,12 @@ module.exports = async (req, res, next) => {
         user: null
     }
 
-    if(req.url == "/login" || req.url == "/registration" || req.url == "/username" ){
+    if(req.url == "/login" || req.url == "/registration"){
         return next();
     }
 
-    let userId = req.session.id;
+    let userId = req.session.userId;
+    console.log("Id: ", userId)
     if(!userId || userId == null){
         return res.redirect("/login");
     }
@@ -22,7 +23,7 @@ module.exports = async (req, res, next) => {
 
     req.identity.isAuthenticated = true;
     req.identity.user = {
-        user_id: userFromDb.dataValues.user_id,
+        passenger_id: userFromDb.dataValues.passenger_id,
         username: userFromDb.dataValues.username,
         password: userFromDb.dataValues.password
     }

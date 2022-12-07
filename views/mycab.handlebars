@@ -1,0 +1,52 @@
+<link href="static/css/mycab.css" rel="stylesheet" type="text/css" />
+
+<div class="container-fluid" style="min-height: 80vh;">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form name="loginform" id="loginform" method="post">
+                <div style="font-size: 40px; color: white;">
+                    <label>Cab Type:</label>
+                    <select name="cabtype" id="option"
+                        style="width: 300px; height: 40px; border:none; border-radius:100px; text-align:center">
+                        <option selected disabled>Choose here</option>
+                        <option value="debit">GoSedan</option>
+                        <option value="credit">Auto</option>
+                        <option value="net">Premium</option>
+                        <option value="upi">cabXL</option>
+                    </select>
+                </div>
+                </br>
+                <div style="font-size: 40px;color: white;">
+                    <label>Cab Model:</label>
+                    <input type="text" name="cabmodel" list="default1" placeholder="Enter Cab Model"
+                        class="form-control" maxlength="10" required style="padding:7px 40px; ">
+                </div>
+                </br>
+                <div style="font-size: 40px;color: white;">
+                    <label>Registration Number:</label>
+                    <input type="text" name="regnum" list="default1" placeholder="Enter Registration Number"
+                        class="form-control" maxlength="30" required style="padding:7px 40px; ">
+                </div>
+                </br>
+                <div style="font-size: 40px;color: white;">
+                    <label>License Plate Number:</label>
+                    <input type="text" name="lnum" list="default1" placeholder="Enter License Plate Number"
+                        class="form-control" maxlength="30" required style="padding:7px 40px; ">
+                </div>
+                </br>
+                <div style="font-size: 40px;color: white;">
+                    <label>Driving License Number:</label>
+                    <input type="text" name="dlnum" list="default1" placeholder="Enter Driver License Number"
+                        class="form-control" maxlength="30" required style="padding:7px 40px; ">
+                </div>
+                </br>
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary shadow" id="btn-login"
+                        style="width: 100%; height: 7vh; font-size: 25px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Submit
+                    </button>
+                </div>
+                </br>
+            </form>
+        </div>
+    </div>
+</div>

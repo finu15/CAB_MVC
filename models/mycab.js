@@ -1,30 +1,30 @@
 const {Sequelize, DataTypes} = require ('sequelize')
 const db = require('./db');
 
-const Bookings =db.sequelize.define('Bookings', {
-    booking_id: {
+const Cab =db.sequelize.define('Cab', {
+    cab_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
 
-    pickup: {
+    cabmodel: {
         type: DataTypes.STRING(15),
         allowNull: false
     },
 
-    destination: {
-        type: DataTypes.STRING(15),
+    regnum: {
+        type: DataTypes.STRING(30),
         allowNull: false
     },
 
-    date: {
-        type: DataTypes.DATE,
+    lnum: {
+        type: DataTypes.STRING(30),
         allowNull: false
     },
   
-    time: {
-        type: DataTypes.TIME,
+    dlnum: {
+        type: DataTypes.STRING(30),
         allowNull: false
     },
 
@@ -35,4 +35,4 @@ const Bookings =db.sequelize.define('Bookings', {
 
 });
 
-module.exports = Bookings;
+module.exports = Cab;
