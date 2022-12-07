@@ -17,5 +17,6 @@ router.post('/createroute', cc.createPostRoute);
 router.get('/updateroute/:id', cc.updateRoute);
 router.post('/updateroute/:id', cc.updatePostRoute);
 router.get('/deleteroute/:id', cc.deleteRoute);
+router.get('/logout', cc.logoutAdmin);
 
 module.exports = router;

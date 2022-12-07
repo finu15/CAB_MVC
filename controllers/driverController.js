@@ -17,7 +17,6 @@ module.exports.cabPost = async (req, res, next) => {
         dlnum: req.body.dlnum,
         passenger_id: req.identity.user.passenger_id
     })
-
         .then(res.redirect('/cabDetails'));
 }
 
@@ -41,10 +40,14 @@ module.exports.mycabs = (req, res, next) => {
         where:
             { passenger_id: passenger_id }
     })
-
         .then(bookings => {
             res.render('cabDetails', {
                 data: bookings
             });
         })
+}
+
+module.exports.logoutDriver = (req, res, next) => {
+    req.session = null;
+    res.redirect("/login");
 }

@@ -12,7 +12,7 @@ module.exports.indexBook = (req, res, next) => {
         console.log(user)
         res.render('adminbooking', {
             data: user,
-            
+
         });
     })
 }
@@ -28,7 +28,7 @@ module.exports.createPostBook = (req, res, next) => {
         date: req.body.date,
         time: req.body.time,
         passenger_id: req.identity.user.passenger_id
-        })
+    })
         .then(userFromDb => {
             res.redirect("/adminbooking");
         })
@@ -40,7 +40,7 @@ module.exports.indexCab = (req, res, next) => {
         console.log(cab)
         res.render('admincabs', {
             data: cab,
-            
+
         });
     })
 }
@@ -56,7 +56,7 @@ module.exports.createPostCab = (req, res, next) => {
         lnum: req.body.lnum,
         dlnum: req.body.dlnum,
         passenger_id: req.identity.user.passenger_id
-        })
+    })
         .then(cabFromDb => {
             res.redirect("/admincabs");
         })
@@ -80,13 +80,13 @@ module.exports.createPostRoute = (req, res, next) => {
         pickup: req.body.pickup,
         destination: req.body.destination,
         amount: req.body.amount
-        })
+    })
         .then(amountFromDb => {
             res.redirect("/adminroutes");
         })
 }
 
-module.exports.updateRoute = async(req, res, next) => {
+module.exports.updateRoute = async (req, res, next) => {
     amount.findByPk(req.params.id)
         .then(amountFromDb => {
             res.render('adminroute-update', {
@@ -99,11 +99,11 @@ module.exports.updatePostRoute = async (req, res, next) => {
     await amount.update(
         {
             pickup: req.body.pickup,
-        destination: req.body.destination,
-        amount: req.body.amount
+            destination: req.body.destination,
+            amount: req.body.amount
         },
         {
-            where: {amount_id: req.params.id}
+            where: { amount_id: req.params.id }
         }
     )
     res.redirect('/adminroutes');
@@ -120,4 +120,9 @@ module.exports.deleteRoute = async (req, res, next) => {
         });
         res.redirect("/adminroutes");
     }
+}
+
+module.exports.logoutAdmin = (req, res, next) => {
+    req.session = null;
+    res.redirect("/login");
 }

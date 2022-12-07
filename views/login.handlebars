@@ -6,7 +6,7 @@
         <div class="container-fluid" style="min-height: 80vh;">
             <div class="row">
                 <div class="col-sm-6 offset-sm-3">
-                    <form name="loginform" id="loginform" method="post" >
+                    <form name="loginform" id="loginform" method="post">
                         <div style="font-size: 20px; color: orange; ">
                             <label>Username:</label>
                             <input type="text" name="username" class="form-control" placeholder="" minlength="5"
@@ -20,13 +20,13 @@
                         </div>
                         </br>
                         <div class="d-grid mt -4">
-                            <input class="btn btn-primary shadow" id="btn-login"
-                                style="width: 100%; height: 7vh;" value = "Login" type = "submit">
+                            <input class="btn btn-primary shadow" id="btn-login" style="width: 100%; height: 7vh;"
+                                value="Login" type="submit">
 
                         </div>
                         {{#if message}}
-                            <p class="text-danger">{{message}}</p>
-                            {{/if}}
+                        <p class="text-danger">{{message}}</p>
+                        {{/if}}
                     </form>
                 </div>
             </div>

@@ -1,7 +1,7 @@
-const {Sequelize, DataTypes} = require ('sequelize')
+const { Sequelize, DataTypes } = require('sequelize')
 const db = require('./db');
 
-const Bookings =db.sequelize.define('Bookings', {
+const Bookings = db.sequelize.define('Bookings', {
     booking_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,7 +22,7 @@ const Bookings =db.sequelize.define('Bookings', {
         type: DataTypes.DATE,
         allowNull: false
     },
-  
+
     time: {
         type: DataTypes.TIME,
         allowNull: false
@@ -32,7 +32,6 @@ const Bookings =db.sequelize.define('Bookings', {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-
 });
 
 module.exports = Bookings;

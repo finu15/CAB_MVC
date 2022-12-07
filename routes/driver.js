@@ -8,5 +8,6 @@ router.get('/mycab', cc.cab);
 router.post('/mycab', cc.cabPost);
 router.get('/deletecab/:id', cc.deleteCab);
 router.get('/cabDetails', cc.mycabs);
+router.get('/logout', cc.logoutDriver);
 
 module.exports = router;

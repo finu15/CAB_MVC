@@ -58,10 +58,10 @@ module.exports.loginPost = async (req, res, next) => {
     if (userFromDb.role == 'driver') {
         return res.redirect('/driverhome');
     }
-    else if(userFromDb.role=='user') {
+    else if (userFromDb.role == 'user') {
         return res.redirect('/home');
     }
-    else{
+    else {
         return res.redirect('/adminhome');
     }
 }
@@ -89,7 +89,6 @@ module.exports.registerPost = async (req, res, next) => {
     });
 
     console.log(req.body);
-
     res.redirect('/login');
 }
 

@@ -1,52 +1,54 @@
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
-<link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+<link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
 <style>
     body {
         margin-top: 20px;
         background-color: white;
     }
-    .dataTables_filter{
+
+    .dataTables_filter {
         margin-left: 28em !important;
     }
-    #example_paginate{
+
+    #example_paginate {
         margin-left: 33em !important;
-}
+    }
 </style>
 <center>
-<h2 style="color: rgb(187, 9, 9);">ALL CABS🚖:</h2>
+    <h2 style="color: rgb(187, 9, 9);">ALL CABS🚖:</h2>
 
 </center>
 
 <div class="container">
     <table class="table table-striped mt-4" id="example" style="text-align: center;">
         <thead>
-        <tr>
-            <th>Id</th>
-            <th>Cab Model</th>
-            <th>Registration Number</th>
-            <th>License Plate No.</th>
-            <th>DL Number</th>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <th>Cab Model</th>
+                <th>Registration Number</th>
+                <th>License Plate No.</th>
+                <th>DL Number</th>
+            </tr>
         </thead>
         <tbody>
-        {{#each data}}
-        <tr>
+            {{#each data}}
+            <tr>
 
-            <td>{{this.dataValues.cab_id}}</td>
-            <td>{{this.dataValues.cabmodel}}</td>
-            <td>{{this.dataValues.regnum}}</td>
-            <td>{{this.dataValues.lnum}}</td>
-            <td>{{this.dataValues.dlnum}}</td>
-        </tr>
-        {{/each}}
+                <td>{{this.dataValues.cab_id}}</td>
+                <td>{{this.dataValues.cabmodel}}</td>
+                <td>{{this.dataValues.regnum}}</td>
+                <td>{{this.dataValues.lnum}}</td>
+                <td>{{this.dataValues.dlnum}}</td>
+            </tr>
+            {{/each}}
         </tbody>
     </table>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
-<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
-<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" ></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script>
-$(document).ready(function () {
-    $('#example').DataTable();
-});
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
 </script>

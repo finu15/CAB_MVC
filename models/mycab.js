@@ -1,7 +1,7 @@
-const {Sequelize, DataTypes} = require ('sequelize')
+const { Sequelize, DataTypes } = require('sequelize')
 const db = require('./db');
 
-const Cab =db.sequelize.define('Cab', {
+const Cab = db.sequelize.define('Cab', {
     cab_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,7 +22,7 @@ const Cab =db.sequelize.define('Cab', {
         type: DataTypes.STRING(30),
         allowNull: false
     },
-  
+
     dlnum: {
         type: DataTypes.STRING(30),
         allowNull: false

@@ -1,19 +1,21 @@
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
-<link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+<link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
 <style>
     body {
         margin-top: 20px;
         background-color: white;
     }
-    .dataTables_filter{
+
+    .dataTables_filter {
         margin-left: 28em !important;
     }
-    #example_paginate{
+
+    #example_paginate {
         margin-left: 33em !important;
-}
+    }
 </style>
 <center>
-<h2 style="color: rgb(187, 9, 9);">Cab Search History🔎:</h2>
+    <h2 style="color: rgb(187, 9, 9);">Cab Search History🔎:</h2>
 
 </center>
 
@@ -21,39 +23,39 @@
     <a href="/booking" class="btn btn-primary">New Booking</a>
     <table class="table table-striped mt-4" id="example" style="text-align: center;">
         <thead>
-        <tr>
-            <th>Id</th>
-            <th>PickUp</th>
-            <th>Destination</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Action</th>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <th>PickUp</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
         </thead>
         <tbody>
-        {{#each data}}
-        <tr>
+            {{#each data}}
+            <tr>
 
-            <td>{{this.dataValues.booking_id}}</td>
-            <td>{{this.dataValues.pickup}}</td>
-            <td>{{this.dataValues.destination}}</td>
-            <td>{{this.dataValues.date}}</td>
-            <td>{{this.dataValues.time}}</td>
-            <td>
-                <a href="/update/{{this.dataValues.booking_id}}">Edit</a> |
-                <a href="/delete/{{this.dataValues.booking_id}}" class="text-danger"
-                    onclick="return confirm('Are you sure you want to delete this')">Delete</a>
-            </td>
-        </tr>
-        {{/each}}
+                <td>{{this.dataValues.booking_id}}</td>
+                <td>{{this.dataValues.pickup}}</td>
+                <td>{{this.dataValues.destination}}</td>
+                <td>{{this.dataValues.date}}</td>
+                <td>{{this.dataValues.time}}</td>
+                <td>
+                    <a href="/update/{{this.dataValues.booking_id}}">Edit</a> |
+                    <a href="/delete/{{this.dataValues.booking_id}}" class="text-danger"
+                        onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
         </tbody>
     </table>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
-<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
-<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js" ></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script>
-$(document).ready(function () {
-    $('#example').DataTable();
-});
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
 </script>

@@ -1,7 +1,7 @@
-const {DataTypes} = require ('sequelize')
+const { DataTypes } = require('sequelize')
 const db = require('./db');
 
-const Passengers =db.sequelize.define('Passengers', {
+const Passengers = db.sequelize.define('Passengers', {
     passenger_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

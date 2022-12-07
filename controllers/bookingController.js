@@ -96,7 +96,7 @@ module.exports.invoice = (req, res, next) => {
         .then(amount => {
             console.log("..........", amount)
             res.render('final', {
-                
+
                 amount_id: amount.amount_id,
                 pickup: amount.pickup,
                 destination: amount.destination,

@@ -3,30 +3,30 @@
     <a href="/mycab" class="btn btn-primary">New Car</a>
     <table class="table table-striped mt-4" id="example" style="text-align: center;">
         <thead>
-        <tr>
-            <th>Id</th>
-            <th>Cab Model</th>
-            <th>Registration Number</th>
-            <th>License Plate No.</th>
-            <th>DL Number</th>
-            <th>Action</th>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <th>Cab Model</th>
+                <th>Registration Number</th>
+                <th>License Plate No.</th>
+                <th>DL Number</th>
+                <th>Action</th>
+            </tr>
         </thead>
         <tbody>
-        {{#each data}}
-        <tr>
+            {{#each data}}
+            <tr>
 
-            <td>{{this.dataValues.cab_id}}</td>
-            <td>{{this.dataValues.cabmodel}}</td>
-            <td>{{this.dataValues.regnum}}</td>
-            <td>{{this.dataValues.lnum}}</td>
-            <td>{{this.dataValues.dlnum}}</td>
-            <td>
-                <a href="/deletecab/{{this.dataValues.cab_id}}" class="text-danger"
-                    onclick="return confirm('Are you sure you want to delete this')">Delete</a>
-            </td>
-        </tr>
-        {{/each}}
+                <td>{{this.dataValues.cab_id}}</td>
+                <td>{{this.dataValues.cabmodel}}</td>
+                <td>{{this.dataValues.regnum}}</td>
+                <td>{{this.dataValues.lnum}}</td>
+                <td>{{this.dataValues.dlnum}}</td>
+                <td>
+                    <a href="/deletecab/{{this.dataValues.cab_id}}" class="text-danger"
+                        onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
         </tbody>
     </table>
 </div>

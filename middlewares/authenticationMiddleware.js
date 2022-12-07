@@ -6,18 +6,18 @@ module.exports = async (req, res, next) => {
         user: null
     }
 
-    if(req.url == "/login" || req.url == "/registration"){
+    if (req.url == "/login" || req.url == "/registration") {
         return next();
     }
 
     let userId = req.session.userId;
     console.log("Id: ", userId)
-    if(!userId || userId == null){
+    if (!userId || userId == null) {
         return res.redirect("/login");
     }
 
     let userFromDb = await user.findByPk(userId);
-    if(userFromDb == null){
+    if (userFromDb == null) {
         return res.redirect("/registration");
     }
 
