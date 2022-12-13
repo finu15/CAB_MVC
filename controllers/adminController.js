@@ -26,8 +26,7 @@ module.exports.createPostBook = (req, res, next) => {
         pickup: req.body.pickup,
         destination: req.body.destination,
         date: req.body.date,
-        time: req.body.time,
-        passenger_id: req.identity.user.passenger_id
+        time: req.body.time
     })
         .then(userFromDb => {
             res.redirect("/adminbooking");
@@ -54,8 +53,7 @@ module.exports.createPostCab = (req, res, next) => {
         cabmodel: req.body.cabmodel,
         regnum: req.body.regnum,
         lnum: req.body.lnum,
-        dlnum: req.body.dlnum,
-        passenger_id: req.identity.user.passenger_id
+        dlnum: req.body.dlnum
     })
         .then(cabFromDb => {
             res.redirect("/admincabs");
